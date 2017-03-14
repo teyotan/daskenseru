@@ -5,6 +5,8 @@ var bodyParser = require('body-parser')
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
+var commonwords = require('../modules/commonwords').array;
+
 router.use('/', express.static('public'));
 
 router.post('/', function(req, res, next) {
@@ -28,11 +30,12 @@ router.post('/', function(req, res, next) {
 	});
 	
 	res.send(
-		arr.filter(function(value){
-			return value.tag != "O";
-		}).map(function(value){
-			return value;
-		})
+		// arr.filter(function(value){
+		// 	return value.tag != "O";
+		// }).map(function(value){
+		// 	return value;
+		// })
+		commonwords
 	);
 });
 
