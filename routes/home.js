@@ -65,7 +65,7 @@ function split2word(str){
 				word += element;
 			}
 			else{ // Tanda Baca
-				if (word.match(/^([0-9])/)){
+				if (word.match(/([0-9])$/)){
 					word += element;
 				}
 				else{
