@@ -11,9 +11,9 @@ router.use('/', express.static('public'));
 
 router.post('/', function(req, res, next) {
 	
-	var arr = req.body.text.split(/\s/); // split2word(req.body.text);
+	var arr = split2word(req.body.text); // req.body.text.split(/\s/)
 
-	arr.forEach(function(element, index, array){
+	/*arr.forEach(function(element, index, array){
 		array[index] = {"word": element, "tag": "O"}
 		
 		if (array[index].word.match(/^[A-Z]([a-z]|[.]$)/)){
@@ -27,15 +27,15 @@ router.post('/', function(req, res, next) {
 				array[index].tag = "START";
 			}
 		}
-	});
+	})*/;
 	
 	res.send(
-		// arr.filter(function(value){
-		// 	return value.tag != "O";
-		// }).map(function(value){
-		// 	return value;
-		// })
-		commonwords
+		 arr.filter(function(value){
+		 	return value;//.tag != "O";
+		 }).map(function(value){
+		 	return value;
+		 })
+		//commonwords
 	);
 });
 
@@ -50,8 +50,8 @@ function split2char(str){
 function split2word(str){
 	
 	var arrTemp = split2char(str);
-	var arr;
-	var word;
+	var arr = [];
+	var word = "";
 	var i = 0;
 	
 	arrTemp.forEach(function(element){
@@ -61,16 +61,24 @@ function split2word(str){
 			word = "";
 		}
 		else{
-			if (element.match(/^([A-Z]|[a-z])/)){
+			if (element.match(/^([A-Z]|[a-z]|[0-9])/)){ // Karakter Latin
 				word += element;
 			}
-			else{
-				arr[i] = word;
-				i++;
-				word = element;
+			else{ // Tanda Baca
+				if (word.match(/^([0-9])/)){
+					word += element;
+				}
+				else{
+					arr[i] = word;
+					i++;
+					word = element;
+				}
+				
 			}
 		}
 	});
+	
+	arr[i] = word;
 	
 	return arr;
 }
