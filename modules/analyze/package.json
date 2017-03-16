@@ -1,0 +1,2 @@
+{ "name" : "analyze",
+  "main" : "./analyze.js" }

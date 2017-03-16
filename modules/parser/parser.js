@@ -1,17 +1,7 @@
 var fs = require("fs");
-
-var exports = module.exports = {}; // object lemparan
 	
-
-exports.split2char = function(str){
-	
-	var arr = str.split("");
-	return arr;
-};
-
-exports.split2word = function(str){
-	
-	var arrTemp = exports.split2char(str);
+var splitToWord = function(str){
+	var arrTemp = str.split("");
 	var arr = [];
 	var word = "";
 	var i = 0;
@@ -44,3 +34,6 @@ exports.split2word = function(str){
 	
 	return arr;
 }
+
+
+exports.splitToWord = splitToWord;
