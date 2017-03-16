@@ -34,4 +34,4 @@ var readLines = function(input, func) {
 
 var commonwords = readLines(text, pushToArray);
 
-exports.array = array; // Bagian ngeluarin
+exports.get = array; // Bagian ngeluarin
