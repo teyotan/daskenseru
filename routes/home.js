@@ -5,33 +5,24 @@ var bodyParser = require('body-parser')
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
+/* Bagian Import modul dan data analisis */
 var commonwords = require('../modules/commonwords').array;
+var parser = require('../modules/parser');
+var analyzer = require('../modules/analyzer');
 
 router.use('/', express.static('public'));
 
 router.post('/', function(req, res, next) {
 	
-	var arr = split2word(req.body.text); // req.body.text.split(/\s/)
-
-	/*arr.forEach(function(element, index, array){
-		array[index] = {"word": element, "tag": "O"}
-		
-		if (array[index].word.match(/^[A-Z]([a-z]|[.]$)/)){
-			if(array[index-1] != undefined){
-				if(array[(index-1)].word.match(/[.]$/)){
-					array[index].tag = "START";
-				} else {
-					array[index].tag = "NE";
-				}
-			} else {
-				array[index].tag = "START";
-			}
-		}
-	})*/;
+	var arr = parser.split2word(req.body.text);
 	
+	var arr = analyzer.analyze(arr);
+	
+	
+	/* Kirim Hasil ke User */
 	res.send(
 		 arr.filter(function(value){
-		 	return value;//.tag != "O";
+		 	return value.tag != "O";
 		 }).map(function(value){
 		 	return value;
 		 })
@@ -40,45 +31,3 @@ router.post('/', function(req, res, next) {
 });
 
 module.exports = router;
-
-function split2char(str){
-	
-	var arr = str.split("");
-	return arr;
-}
-
-function split2word(str){
-	
-	var arrTemp = split2char(str);
-	var arr = [];
-	var word = "";
-	var i = 0;
-	
-	arrTemp.forEach(function(element){
-		if (element.match(" ")){
-			arr[i] = word;
-			i++;
-			word = "";
-		}
-		else{
-			if (element.match(/^([A-Z]|[a-z]|[0-9])/)){ // Karakter Latin
-				word += element;
-			}
-			else{ // Tanda Baca
-				if (word.match(/([0-9])$/)){
-					word += element;
-				}
-				else{
-					arr[i] = word;
-					i++;
-					word = element;
-				}
-				
-			}
-		}
-	});
-	
-	arr[i] = word;
-	
-	return arr;
-}
