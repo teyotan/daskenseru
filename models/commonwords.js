@@ -1,6 +1,6 @@
 var fs = require("fs");
 
-var text = fs.createReadStream('modules/commonwords/commonwords.txt');
+var text = fs.createReadStream('assets/commonwords.txt');
 
 var array = [];
 
@@ -34,4 +34,8 @@ var readLines = function(input, func) {
 
 var commonwords = readLines(text, pushToArray);
 
+<<<<<<< HEAD:modules/commonwords/commonwords.js
 exports.array = array; // Bagian ngeluarin
+=======
+exports.get = array; // Bagian ngeluarin
+>>>>>>> 08582a2e333a8a9ce613c761cd739c098c58880a:models/commonwords.js

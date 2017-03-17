@@ -5,6 +5,7 @@ var bodyParser = require('body-parser')
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
+<<<<<<< HEAD
 /* Bagian Import modul dan data analisis */
 var commonwords = require('../modules/commonwords').array;
 var parser = require('../modules/parser');
@@ -29,5 +30,12 @@ router.post('/', function(req, res, next) {
 		//commonwords
 	);
 });
+=======
+var homeController = require("../controllers/homeController.js").index;
+
+router.use('/', express.static('public'));
+
+router.post('/', homeController);
+>>>>>>> 08582a2e333a8a9ce613c761cd739c098c58880a
 
 module.exports = router;
