@@ -1,0 +1,390 @@
+Brunei Darussalam
+Filipina
+Indonesia
+Kamboja
+Laos
+Malaysia
+Thailand
+Myanmar
+Singapura
+Vietnam
+Timor Leste
+Bangladesh
+Bhutan
+India
+Maladewa
+Nepal
+Pakistan
+Srilangka
+Jepang
+Korea Selatan
+Korea Utara
+Mongolia
+RR China
+Taiwan
+Afganistan
+Bahrain
+Irak
+Iran
+Israel
+Kuwait
+Libanon
+Oman
+Palestina
+Qatar
+Saudi Arabia
+Siprus
+Suriah
+Turki
+Uni Emerad Arab
+Yaman
+Yordania
+Armenia
+Azerbaijan
+Kazakhstan
+Kirgystan
+Tajikistan
+Turkmenistan
+Uzbekistan
+Benin
+Burkina Faso
+Gambia
+Ghana
+Guinea
+Guinea Bissau
+Liberia
+Mali
+Mauritania
+Nigeria
+Pantai Gading
+Senegal
+Sierra Leone
+Tanjung Verde
+Togo
+Afrika Selatan
+Bostwana
+Lesotho
+Namibia
+Swaziland
+Zimbabwe
+Burundi
+Eritrea
+Ethiopia
+Djibouti
+Kenya
+Komoro
+Malagasi
+Malawi
+Mauritius
+Mozambik
+Rwanda
+Seychelles
+Somalia
+Tanzania
+Uganda
+Angola
+Gabon
+Kamerun
+Kongo
+Afrika Tengah
+Saotome & Principe
+Zaire
+Zambia
+Aljazair
+Chad
+Libia
+Maroko
+Mesir
+Nigeria
+Sahara Barat
+Tunisia
+New South Wales
+Victoria
+Queensland
+Australia Barat
+Australia Selatan
+Tasmania
+Wilayah Australia Utara
+Wilayah Ibukota Australia
+Amerika Serikat (USA)
+Kanada
+Mexiko
+Antiqua
+Barbados
+Belize
+Costa Rica
+Dominica
+Elsavador
+Grenada San
+Guadeloupe St.
+Guatemala
+Haiti
+Honduras
+Kuba
+Martinique
+Nikaragua
+Panama
+Poertorico
+Trinidad & Tobago
+Jamaika
+Argentina
+Bolivia
+Brasil
+Chili
+Equador
+Guyana
+Guyana (PERN)
+Kulombia
+Paraguay
+Peru
+Suriname
+Uruguay
+Venezuela
+Belanda
+Belgia
+Inggris
+Irlandia
+Jerman
+Luksemburg
+Prancis
+Austria
+Ceko
+Hungaria
+Polandia
+Slovakia
+Swiss
+Albania
+Andorra
+Bosnia
+Italia
+Kroasia
+Macedonia
+Monaco
+Portugal
+San Marino
+Slovenia
+Spanyol
+Vatikan
+Yunani
+Belarusia
+Bulgaria
+Estonia
+Georgia
+Latvia
+Lithuania
+Moldova
+Rumania
+Rusia **)
+Ukraina
+Denmark
+Finlandia
+Islandia
+Norwegia
+Swedia
+Belau
+Federasi Micronesia
+Fiji
+Kalidonia Baru
+Kiribati
+Selandia Baru
+Papua Nugini
+Salomon
+Tahiti
+Tonga
+Tuwalu
+Vanuattu
+Bandar Sri Begawan
+Manila
+Jakarta
+Phnom Penh
+Vientiane
+Kuala Lumpur
+Bangkok
+Yangoon
+Singapura
+Hanoi
+Dilli
+Dakka
+Thimphu
+New Delhi
+Male
+Kathmandu
+Islamabad
+Kolombo
+Tokyo
+Seoul
+Pyong Yang
+Ulan Bator
+Beijing
+Taipei/Taipeh
+Kabul
+Almanama
+Baghdad
+Teheran
+Tel Aviv
+Kuwait
+Beirut
+Muskat
+Jerusalem
+Doha
+Riyadh
+Nikosia
+Damaskus
+Ankara
+Abu Dhabi
+Sana'a
+Amman
+Jerevan
+Baku
+Alma Ata
+Bishkek
+Duschanbe
+Aschabad
+Taschkent
+Porto Novo
+Ougadougou
+Banjul
+Accra
+Conakry
+Bissau
+Monrovia
+Bamako
+Nouakchott
+Abuja
+Yamoussoukro
+Dakar
+Freetown
+Praira
+Lome
+Pretoria
+Gaborone
+Maseru
+Windhoek
+Mbabane
+Harare
+Bujumbura
+Asmara
+Addis Ababa
+Djibauti
+Nairobi
+Moroni
+Antananarivo
+Lilongwe
+Port Louis
+Maputo
+Kigali
+Victoria
+Mogadishu
+Dodoma
+Kampala
+Luanda
+Libreville
+Yaounde
+Brazzaville
+Bangui
+Sao Tome
+Kinshasa
+Lusaka
+Aljir
+N'Djamena
+Tripoli
+Rabat
+Kairo
+Niamey
+Al Aainun
+Tunis
+Sidney
+Melbourne
+Brisbane
+Perth
+Adelaide
+Hobart
+Darwin
+Canberra
+Washington DC
+Ottawa
+Mexico City
+St. Johns
+Bridgetown
+Belmopan
+San Yose
+Santo
+Domingo
+Salvador
+George's
+Guatemala
+Portau prince
+Teguocipalgapa
+Havana
+Fort de Prance
+Managua
+Panama
+San Juan
+Portof span
+Kingstone
+Boeonos Aires
+La Paz
+Rio De Janeiro
+Santiago
+Quito
+George town
+Kayenne
+Bogota
+Auncion
+Lima
+Paranaribo
+Montevideo
+Caracas
+Amsterdam
+Brussel
+London
+Dublin
+Berlin
+Luksemburg
+Paris
+Wina
+Praha
+Budhapest
+Warsawa
+Bratislava
+Bern
+Tirana
+Andorra
+Sarajevo
+Roma
+Zagreb
+Skopje
+Monaco
+Lisbon
+San Marino
+Ljubljana
+Madrid
+Vatikan
+Athena
+Minsk
+Sofia
+Tallin
+Tbilisi
+Riga
+Vilnius
+Kishinau
+Bucharest
+Moskwa
+Kiev
+Kopenhagen
+Helsinski
+Reykjavik
+Oslo
+Stockholm
+Koror
+Ponape
+Suva
+Nomea
+Bairiki
+Wellington
+Port Moresby
+Honiora
+Pappete
+Nukualofa
+Funafuti
+Port Vill

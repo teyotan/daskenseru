@@ -4,65 +4,105 @@ var exports = module.exports = {}; // object lemparan
 	
 
 exports.analyze = function(arr){
+	arr[-1] = {"word": ".", "tag": "O"};
 	
 	arr.forEach(function(element, index, array){
-		array[index] = {"word": element, "tag": "O"}
+		array[index] = {"word": element, "tag": "O"};
 		
-		if (!commonWords(array[index])){
-			if(isLocation(array[index]){
-				array[index] = tagLocation(array, index);
+		/* Pemisahan kandidat entity dan others */
+		if(array[index-1].word == "." && array[index-1].tag == "O"){
+			if(!exports.IsCommonWords(array[index])){
+				array[index].tag = "NE";
 			}
-			else if(isOrganization(array[index])){
-				array[index] = tagOrganization(array, index);
+		}
+		else if(array[index].word.match(/^[A-Z]/)){
+			array[index].tag = "NE";
+		}
+		else if((array[index].word == ".") && (array[index-1].tag != "O")){
+			array[index].tag = "NE";
+		}
+		
+		
+		/* Tagging terhadap kandidat entity */
+		if (array[index].tag == "NE"){
+			if(exports.isLocation(array[index])){
+				array[index] = exports.tagLocation(array, index);
 			}
-			else if(isPerson)(array[index])){
-				array[index] = tagPerson(array, index);
+			else if(exports.isOrganization(array[index])){
+				array[index] = exports.tagOrganization(array, index);
+			}
+			else if(exports.isPerson(array[index], array[index-1])){
+				array[index] = exports.tagPerson(array, index);
+			}
+			else{
+				array[index].tag = "O";
 			}
 		}
 	});
 	
-	arr = exports.tagPerson(arr);
-	
 	return arr;
 };
 
-/*
-if (array[index].word.match(/^[A-Z]([a-z]|[.]$)/)){
-			if(array[index-1] != undefined){
-				if(array[(index-1)].word.match(/[.]$/)){
-					
-				} else {
-					array[index].tag = "NE";
-				}
-			} else {
-				array[index].tag = "NE";
-			}
-		}
+/* VERIFIKASI LOGIK ENTITAS */
+exports.isPerson = function(token, prev){
+/* I.S. token adalah array[index], prev adalah array[index-1] */
 
-*/
-
-exports.isPerson = function(word){
-	
-	return word.match(/^[A-Z]/);
+	var stats;
+	if (token.word.match(/^[A-Z]/) && token.tag == "NE"){
+		stats = true;
+	}
+	else if(prev.word.match(/^[A-Z]$/)){
+		stats = true;
+	}
+	else{
+		stats = false;
+	}
+	return stats;
 }
 
+exports.isLocation = function(token){
+	
+	return 0;
+}
+
+exports.isOrganization = function(token){
+	
+	return 0;
+}
+
+exports.IsCommonWords = function(token){
+	
+	return 0;
+}
+
+
+/* FUNGSI TAGGING */
 exports.tagPerson = function(arr, i){
  
-	array[index].tag = "B_PER";
+	arr[i].tag = "B_PER";
+	if ((arr[i-1].tag == "B_PER") || (arr[i-1].tag == "I_PER")){
+		arr[i].tag = "I_PER";
+	}
 	
-	var temp;
-	var i = 0;
-	while (arr[i] != undefined){	
-		if ((arr[i].tag == "I_PER") && (arr[i + 1].tag == "I_PER")){
-			arr[i].tag = "B_PER";
-			temp = i+1;
-			while (arr[temp] != undefined && arr[temp].tag == "I_PER"){
-				temp++;
-			}
-			i = temp;
-		}
-		i++;
-	};
+	return arr[i];
+}
+
+exports.tagLocation = function(arr, i){
+ 
+	arr[i].tag = "B_LOC";
+	if ((arr[i-1].tag == "B_LOC") || (arr[i-1].tag == "I_LOC")){
+		arr[i].tag = "I_LOC";
+	}
 	
-	return arr;
+	return arr[i];
+}
+
+exports.tagOrganization = function(arr, i){
+ 
+	arr[i].tag = "B_ORG";
+	if ((arr[i-1].tag == "B_ORG") || (arr[i-1].tag == "I_ORG")){
+		arr[i].tag = "I_ORG";
+	}
+	
+	return arr[i];
 }

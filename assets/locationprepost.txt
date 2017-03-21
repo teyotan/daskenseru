@@ -1,0 +1,5 @@
+jalan
+desa
+kota
+kecamatan
+kelurahan
