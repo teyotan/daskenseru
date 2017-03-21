@@ -1,5 +1,5 @@
 var parser = require('../modules/parser').splitToWord;
-var analyzer = require('../modules/analyze').analyze;
+var analyzer = require('../modules/analyzer').analyze;
 
 var index = function(req, res, next) {
 	var arr = parser(req.body.text);
