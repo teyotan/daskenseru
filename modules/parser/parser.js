@@ -20,6 +20,9 @@ var splitToWord = function(str){
 				if (word.match(/([0-9])$/)){
 					word += element;
 				}
+				else if(word.match(/([,])$/) && element == "-"){
+					word += element;
+				}
 				else{
 					arr[i] = word;
 					i++;
