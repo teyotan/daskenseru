@@ -420,13 +420,9 @@ penjelasan
 wilayah
 tsoukalos
 sisi
-a
-et
 bertahan
 terletak
-mesir
 dimulai
-einstein
 gelombang
 metode
 berbagai
@@ -455,7 +451,6 @@ tanggal
 piramida
 mirip
 tunggal
-io
 mudah
 kepala
 tingkat
@@ -1822,7 +1817,6 @@ gravity
 uranus
 laboratorium
 mengeksplorasi
-facebook
 peta
 kesejahteraan
 akurat
@@ -1923,7 +1917,7 @@ memanjang
 berjuang
 menyelam
 alright
-fretilin
+curi
 television
 bill
 tablet
@@ -1945,7 +1939,7 @@ mengejar
 komersial
 keserakahan
 ujung
-galileo
+pihak
 katolik
 raja
 kaisar
@@ -1997,3 +1991,5 @@ sisanya
 terowongan
 perlahan
 sehat
+pertanggungjawaban
+padahal

@@ -1,6 +1,6 @@
 var fs = require("fs");
 
-var text = fs.createReadStream('assets/commonwords.txt');
+var text = fs.createReadStream('assets/locationsprepost.txt');
 
 var array = [];
 

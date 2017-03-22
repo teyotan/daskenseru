@@ -6,7 +6,18 @@ var index = function(req, res, next) {
 	
 	var arr = analyzer(arr);
 
-	res.send(arr);
+	res.send({
+		rawData: arr,
+		// person: arr.filter(function(element){
+		// 	return ((element.tag == "B_PER") || (element.tag == "I_PER"))
+		// }),
+		// organisasi: arr.filter(function(element){
+		// 	return ((element.tag == "B_ORG") || (element.tag == "I_ORG"))
+		// }),
+		// location: arr.filter(function(element){
+		// 	return ((element.tag == "B_LOC") || (element.tag == "I_LOC"))
+		// }),
+	});
 };
 
 exports.index = index;

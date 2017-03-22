@@ -1,4 +1,5 @@
-Brunei Darussalam
+Brunei
+Darussalam
 Filipina
 Indonesia
 Kamboja
@@ -8,7 +9,8 @@ Thailand
 Myanmar
 Singapura
 Vietnam
-Timor Leste
+Timor
+Leste
 Bangladesh
 Bhutan
 India
@@ -17,8 +19,7 @@ Nepal
 Pakistan
 Srilangka
 Jepang
-Korea Selatan
-Korea Utara
+Korea
 Mongolia
 RR China
 Taiwan
@@ -32,11 +33,14 @@ Libanon
 Oman
 Palestina
 Qatar
-Saudi Arabia
+Saudi
+Arabia
 Siprus
 Suriah
 Turki
-Uni Emerad Arab
+Uni
+Emirad
+Arab
 Yaman
 Yordania
 Armenia
@@ -47,21 +51,27 @@ Tajikistan
 Turkmenistan
 Uzbekistan
 Benin
-Burkina Faso
+Burkina
+Faso
 Gambia
 Ghana
 Guinea
-Guinea Bissau
+Guinea
+Bissau
 Liberia
 Mali
 Mauritania
 Nigeria
-Pantai Gading
+Pantai
+Gading
 Senegal
-Sierra Leone
-Tanjung Verde
+Sierra
+Leone
+Tanjung
+Verde
 Togo
-Afrika Selatan
+Afrika
+Selatan
 Bostwana
 Lesotho
 Namibia
@@ -87,7 +97,8 @@ Gabon
 Kamerun
 Kongo
 Afrika Tengah
-Saotome & Principe
+Saotome
+Principe
 Zaire
 Zambia
 Aljazair
@@ -98,15 +109,16 @@ Mesir
 Nigeria
 Sahara Barat
 Tunisia
-New South Wales
+New
+South
+Wales
 Victoria
 Queensland
-Australia Barat
-Australia Selatan
+Australia
+Barat
 Tasmania
-Wilayah Australia Utara
-Wilayah Ibukota Australia
-Amerika Serikat (USA)
+Amerika
+Serikat
 Kanada
 Mexiko
 Antiqua
@@ -116,7 +128,7 @@ Costa Rica
 Dominica
 Elsavador
 Grenada San
-Guadeloupe St.
+Guadeloupe
 Guatemala
 Haiti
 Honduras
@@ -125,7 +137,7 @@ Martinique
 Nikaragua
 Panama
 Poertorico
-Trinidad & Tobago
+TrinidadTobago
 Jamaika
 Argentina
 Bolivia
@@ -133,7 +145,6 @@ Brasil
 Chili
 Equador
 Guyana
-Guyana (PERN)
 Kulombia
 Paraguay
 Peru
@@ -161,7 +172,8 @@ Kroasia
 Macedonia
 Monaco
 Portugal
-San Marino
+San
+Marino
 Slovenia
 Spanyol
 Vatikan
@@ -174,7 +186,7 @@ Latvia
 Lithuania
 Moldova
 Rumania
-Rusia **)
+Rusia
 Ukraina
 Denmark
 Finlandia
@@ -182,23 +194,29 @@ Islandia
 Norwegia
 Swedia
 Belau
-Federasi Micronesia
+Federasi
+Micronesia
 Fiji
-Kalidonia Baru
+Kalidonia
 Kiribati
-Selandia Baru
+Selandia
+Baru
 Papua Nugini
 Salomon
 Tahiti
 Tonga
 Tuwalu
 Vanuattu
-Bandar Sri Begawan
+Bandar
+Sri
+Begawan
 Manila
 Jakarta
-Phnom Penh
+Phnom
+Penh
 Vientiane
-Kuala Lumpur
+Kuala
+Lumpur
 Bangkok
 Yangoon
 Singapura
@@ -206,7 +224,8 @@ Hanoi
 Dilli
 Dakka
 Thimphu
-New Delhi
+New
+Delhi
 Male
 Kathmandu
 Islamabad
@@ -216,12 +235,14 @@ Seoul
 Pyong Yang
 Ulan Bator
 Beijing
-Taipei/Taipeh
+Taipei
+Taipeh
 Kabul
 Almanama
 Baghdad
 Teheran
-Tel Aviv
+Tel
+Aviv
 Kuwait
 Beirut
 Muskat
@@ -231,17 +252,20 @@ Riyadh
 Nikosia
 Damaskus
 Ankara
-Abu Dhabi
+Abu
+Dhabi
 Sana'a
 Amman
 Jerevan
 Baku
-Alma Ata
+Alma
+Ata
 Bishkek
 Duschanbe
 Aschabad
 Taschkent
-Porto Novo
+Porto
+Novo
 Ougadougou
 Banjul
 Accra
@@ -282,7 +306,8 @@ Libreville
 Yaounde
 Brazzaville
 Bangui
-Sao Tome
+Sao
+Tome
 Kinshasa
 Lusaka
 Aljir
@@ -301,10 +326,11 @@ Adelaide
 Hobart
 Darwin
 Canberra
-Washington DC
+Washington
 Ottawa
-Mexico City
-St. Johns
+Mexico
+City
+Johns
 Bridgetown
 Belmopan
 San Yose
@@ -316,15 +342,20 @@ Guatemala
 Portau prince
 Teguocipalgapa
 Havana
-Fort de Prance
+Fort
+Prance
 Managua
 Panama
-San Juan
-Portof span
+San
+Juan
+Portof
 Kingstone
-Boeonos Aires
+Boeonos
+Aires
 La Paz
-Rio De Janeiro
+Rio
+De
+Janeiro
 Santiago
 Quito
 George town
@@ -356,7 +387,8 @@ Zagreb
 Skopje
 Monaco
 Lisbon
-San Marino
+San
+Marino
 Ljubljana
 Madrid
 Vatikan
@@ -382,7 +414,8 @@ Suva
 Nomea
 Bairiki
 Wellington
-Port Moresby
+Port
+Moresby
 Honiora
 Pappete
 Nukualofa
