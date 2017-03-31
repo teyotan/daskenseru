@@ -1,13 +1,80 @@
-var fs = require("fs");
+var eachOfSeries = require("async/eachOfSeries");
 	
 var splitToWord = function(str){
+	var arrTemp = str.split("");
+	var arr = [];
+	var word = "";
+	var newP = true;
+
+	var wordToArray = function(word){
+		if (word != "") {
+			if (newP){
+				arr.push([])
+				console.log("newP")
+				newP = false;
+			}
+			
+			arr[arr.length-1].push(word);
+
+			if (word == "."){
+				arr[arr.length-1].push("End Of Sentence")
+			}	
+		}
+	}
+
+	eachOfSeries(arrTemp, function (value, key, callback){
+		try {
+			if (value.match(/^([A-Z]|[a-z]|[0-9])/)){
+				word += value;
+			} else if (value.match(" ")){
+				wordToArray(word)
+				word = ""
+			} else if (value == "\"" || value == "'"){
+				wordToArray(word)
+				wordToArray(value)
+				word = ""
+			} else if (value == "\r"){
+				wordToArray(word)
+				word = ""
+			} else if (value == "\n"){
+				newP = true
+				wordToArray("")
+			} else if (arrTemp[key+1] != " "){
+				if (arrTemp[key+1] != undefined){
+					word += value;
+				} else {
+					wordToArray(word)
+					word = value
+				}
+			} else {
+				wordToArray(word)
+				word = value
+			}
+        } catch (err) {
+            return callback(err)
+        }
+		callback();
+	}, function(err){
+		wordToArray(word)
+		console.log("eachOfSeries done")
+		if(err){
+			console.log(err)
+		}
+	});
+	console.log(arr)
+	return arr;
+}
+
+exports.splitToWord = splitToWord;
+
+var splitToWordOld = function(str){
 	var arrTemp = str.split("");
 	var arr = [];
 	var word = "";
 	var i = 0;
 	
 	arrTemp.forEach(function(element){
-		if (element.match(/\s/)){
+		if (element.match(" ")){
 			if (word !== ""){
 				arr[i] = word;
 				i++;
@@ -19,8 +86,14 @@ var splitToWord = function(str){
 				word += element;
 			}
 			else{ // Tanda Baca
-				if (word.match(/([0-9])$/)){
-					word += element;
+				if (word.match(/([0-9])$/) && element == "."){
+					if (!word.match(/^([0-9]){4}$/)){
+						word += element;
+					} else {
+						arr[i] = word;
+						i++;
+						word = element;
+					}
 				} else if(word.match(/([,])$/) && element == "-"){
 					word += element;
 				} else{
@@ -37,6 +110,3 @@ var splitToWord = function(str){
 	
 	return arr;
 }
-
-
-exports.splitToWord = splitToWord;

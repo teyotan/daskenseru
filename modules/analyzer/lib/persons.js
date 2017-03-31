@@ -2,7 +2,7 @@ var isPerson = function(arr, i){
 	if (arr[i].word.match(/^[A-Z]/) && arr[i].tag == "NE"){
 		return true;
 	}
-	else if(arr[i-1].word.match(/^[A-Z]$/)){
+	else if(arr[i-1].word.match(/^[A-Z]$/)){ //check singkatan nama satu karakter
 		return true;
 	}
 	else{
