@@ -2,6 +2,7 @@ var eachOfSeries = require("async/eachOfSeries");
 	
 var splitToWord = function(str){
 	var arrTemp = str.split("");
+	console.log(arrTemp)
 	var arr = [];
 	var word = "";
 	var newP = true;
@@ -10,7 +11,6 @@ var splitToWord = function(str){
 		if (word != "") {
 			if (newP){
 				arr.push([])
-				console.log("newP")
 				newP = false;
 			}
 			
@@ -29,7 +29,7 @@ var splitToWord = function(str){
 			} else if (value.match(" ")){
 				wordToArray(word)
 				word = ""
-			} else if (value == "\"" || value == "'"){
+			} else if (value == "\"" || value == "'" || value == "(" || value == ")"){
 				wordToArray(word)
 				wordToArray(value)
 				word = ""
@@ -40,11 +40,11 @@ var splitToWord = function(str){
 				newP = true
 				wordToArray("")
 			} else if (arrTemp[key+1] != " "){
-				if (arrTemp[key+1] != undefined){
-					word += value;
-				} else {
+				if (arrTemp[key+1] == "\r" || arrTemp[key+1] == undefined || arrTemp[key+1] == "\""){
 					wordToArray(word)
 					word = value
+				} else {
+					word += value
 				}
 			} else {
 				wordToArray(word)
@@ -56,12 +56,12 @@ var splitToWord = function(str){
 		callback();
 	}, function(err){
 		wordToArray(word)
-		console.log("eachOfSeries done")
+		console.log("Parser Done")
 		if(err){
 			console.log(err)
 		}
 	});
-	console.log(arr)
+
 	return arr;
 }
 
