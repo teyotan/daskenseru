@@ -7,9 +7,11 @@ var splitToWord = function(str){
 	var i = 0;
 	
 	arrTemp.forEach(function(element){
-		if (element.match(" ")){
-			arr[i] = word;
-			i++;
+		if (element.match(/\s/)){
+			if (word !== ""){
+				arr[i] = word;
+				i++;
+			}
 			word = "";
 		}
 		else{
@@ -17,13 +19,20 @@ var splitToWord = function(str){
 				word += element;
 			}
 			else{ // Tanda Baca
-				if (word.match(/([0-9])$/)){
+				if (word.match(/([0-9])$/) && element == "."){
+					if (!word.match(/^([0-9]){4}$/)){
+						word += element;
+					}
+					else{
+						arr[i] = word;
+						i++;
+						word = element;
+					}
+				} else if(word.match(/([,])$/) && element == "-"){
 					word += element;
-				}
-				else if(word.match(/([,])$/) && element == "-"){
+				} else if(word.match(/^([^0-9])/) && word.match(/([0-9]$)/) && element == ","){
 					word += element;
-				}
-				else{
+				} else{
 					arr[i] = word;
 					i++;
 					word = element;

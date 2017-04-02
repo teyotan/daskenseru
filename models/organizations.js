@@ -18,7 +18,7 @@ var readLines = function(input, func) {
 		while (index > -1) {
 			var line = remaining.substring(last, index-1);
 			last = index + 1;
-			func(line);
+			func(line.toLowerCase());
 			index = remaining.indexOf('\n', last);
 		}
 
@@ -32,6 +32,6 @@ var readLines = function(input, func) {
 	});
 }
 
-var organizations = readLines(text, pushToArray);
+readLines(text, pushToArray);
 
 exports.get = array; // Bagian ngeluarin
