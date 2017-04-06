@@ -6,5 +6,5 @@ var home = require('./routes/home')
 app.use('/', home)
 
 app.listen(80, function () {
- 	console.log('Example app listening on port 80!')
+ 	console.log('App running on port 80')
 })

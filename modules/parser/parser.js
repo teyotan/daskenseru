@@ -1,8 +1,13 @@
-var eachOfSeries = require("async/eachOfSeries");
+var eachOfSeries = require("async/eachOfSeries")
+
+var removeInvalidEOS = require("./removeInvalidEOS.js").get
+
+removeInvalidEOS.then((resolved) => {
+  console.log(resolved)
+});
 	
 var splitToWord = function(str){
 	var arrTemp = str.split("");
-	console.log(arrTemp)
 	var arr = [];
 	var word = "";
 	var newP = true;
@@ -66,47 +71,3 @@ var splitToWord = function(str){
 }
 
 exports.splitToWord = splitToWord;
-
-var splitToWordOld = function(str){
-	var arrTemp = str.split("");
-	var arr = [];
-	var word = "";
-	var i = 0;
-	
-	arrTemp.forEach(function(element){
-		if (element.match(" ")){
-			if (word !== ""){
-				arr[i] = word;
-				i++;
-			}
-			word = "";
-		}
-		else{
-			if (element.match(/^([A-Z]|[a-z]|[0-9])/)){ // Karakter Latin
-				word += element;
-			}
-			else{ // Tanda Baca
-				if (word.match(/([0-9])$/) && element == "."){
-					if (!word.match(/^([0-9]){4}$/)){
-						word += element;
-					} else {
-						arr[i] = word;
-						i++;
-						word = element;
-					}
-				} else if(word.match(/([,])$/) && element == "-"){
-					word += element;
-				} else{
-					arr[i] = word;
-					i++;
-					word = element;
-				}
-				
-			}
-		}
-	});
-	
-	arr[i] = word;
-	
-	return arr;
-}
