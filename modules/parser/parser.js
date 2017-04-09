@@ -1,10 +1,6 @@
 var eachOfSeries = require("async/eachOfSeries")
 
 var removeInvalidEOS = require("./removeInvalidEOS.js").get
-
-removeInvalidEOS.then((resolved) => {
-  console.log(resolved)
-});
 	
 var splitToWord = function(str){
 	var arrTemp = str.split("");
@@ -67,6 +63,8 @@ var splitToWord = function(str){
 		}
 	});
 
+	removeInvalidEOS(arr);
+		
 	return arr;
 }
 

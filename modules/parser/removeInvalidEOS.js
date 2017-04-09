@@ -1,31 +1,30 @@
-var eachOf = require("async/eachOf")
+var eachOf = require("async/eachOf");
 
 var commondots = require("../../models/commondots.js").get;
 
-commondots.then((resolved) => {
-  return Promise.resolve(resolved);
-});
-
-
 var func = function(parsed){
-	eachOff(parsed, function (parValue, parKey, parCallback){
+	eachOf(parsed, function (parValue, parKey, parCallback){
 		try {
-			eachOff(parValue, function (senValue, senKey, senCallback){
+			eachOf(parValue, function (senValue, senKey, senCallback){
 				try {
-					senValue
+					if(senValue == "End Of Sentence"){
+						if(commondots.indexOf(parValue[senKey-2].toLowerCase()) + 1){
+							parValue.splice(senKey, 1);
+						}
+					}
 		        } catch (err) {
-		            return callback(err)
+		            return senCallback(err)
 		        }
-				callback();
+				senCallback();
 			}, function(err){
 				if(err){
 					console.log(err)
 				}
 			})
         } catch (err) {
-            return callback(err)
+            return parCallback(err)
         }
-		callback();
+		parCallback();
 	}, function(err){
 		console.log("Removing faulty EOS done")
 		if(err){
@@ -34,4 +33,4 @@ var func = function(parsed){
 	})
 }
 
-exports.get = commondots;
+exports.get = func;
