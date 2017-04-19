@@ -54,7 +54,7 @@ var tokenizer = function(str){
 		callback();
 	}, function(err){
 		wordToArray(word)
-		console.log("Parser Done")
+		console.log("Tokenizer done")
 		if(err){
 			console.log(err)
 		}
@@ -63,7 +63,6 @@ var tokenizer = function(str){
 
 	/* not used in the moment */
 	// removeInvalidEOS(arr);
-		
 	return arr;
 }
 
