@@ -1,0 +1,2 @@
+{ "name" : "tokenizer",
+  "main" : "./tokenizer.js" }
