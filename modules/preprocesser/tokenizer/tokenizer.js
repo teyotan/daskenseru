@@ -1,8 +1,9 @@
 var eachOfSeries = require("async/eachOfSeries")
 
-var removeInvalidEOS = require("./removeInvalidEOS.js").get
+/* not used in the moment */
+// var removeInvalidEOS = require("./lib/removeInvalidEOS.js").get
 	
-var splitToWord = function(str){
+var tokenizer = function(str){
 	var arrTemp = str.split("");
 	var arr = [];
 	var word = "";
@@ -16,10 +17,6 @@ var splitToWord = function(str){
 			}
 			
 			arr[arr.length-1].push(word);
-
-			if (word == "."){
-				arr[arr.length-1].push("End Of Sentence")
-			}	
 		}
 	}
 
@@ -63,9 +60,11 @@ var splitToWord = function(str){
 		}
 	});
 
-	removeInvalidEOS(arr);
+
+	/* not used in the moment */
+	// removeInvalidEOS(arr);
 		
 	return arr;
 }
 
-exports.splitToWord = splitToWord;
+module.exports = tokenizer;

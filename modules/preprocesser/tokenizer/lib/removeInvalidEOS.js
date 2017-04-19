@@ -1,6 +1,6 @@
 var eachOf = require("async/eachOf");
 
-var commondots = require("../../models/commondots.js").get;
+var commondots = require("../../../../models/commondots.js").get;
 
 var func = function(parsed){
 	eachOf(parsed, function (parValue, parKey, parCallback){
