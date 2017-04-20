@@ -5,7 +5,7 @@ var stemmer = function(arr){
 		try {
 			eachOf(parValue, function (senValue, senKey, senCallback){
 				try {
-					parValue[senKey] = senValue + 'Stemmed bruh'
+					parValue[senKey] = ""/*senValue + 'Stemmed bruh'*/
 		        } catch (err) {
 		            return senCallback(err)
 		        }
