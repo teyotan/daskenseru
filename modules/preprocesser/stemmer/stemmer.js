@@ -5,7 +5,7 @@ var stemmer = function(arr){
 		try {
 			eachOf(parValue, function (senValue, senKey, senCallback){
 				try {
-					parValue[senKey] = senValue + 'Stemmed bruh'
+					parValue[senKey] = suffix(senValue)
 		        } catch (err) {
 		            return senCallback(err)
 		        }
@@ -15,8 +15,8 @@ var stemmer = function(arr){
 					return console.log(err)
 				}
 			})
-        } catch (err) {
-            return parCallback(err)
+		} catch (err) {
+			return parCallback(err)
         }
 		parCallback();
 	}, function(err){
