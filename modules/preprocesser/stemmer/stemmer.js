@@ -6,7 +6,7 @@ var stemmer = function(arr){
 		try {
 			eachOf(parValue, function (senValue, senKey, senCallback){
 				try {
-					parValue[senKey] = suffix(senValue)
+					parValue[senKey] = stemEngine(senValue)
 		        } catch (err) {
 		            return senCallback(err)
 		        }

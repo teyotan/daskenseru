@@ -20,45 +20,49 @@ var tokenizer = function(str){
 		}
 	}
 
-	eachOfSeries(arrTemp, function (value, key, callback){
-		try {
-			if (value.match(/^([A-Z]|[a-z]|[0-9])/)){
-				word += value;
-			} else if (value.match(" ")){
-				wordToArray(word)
-				word = ""
-			} else if (value == "\"" || value == "'" || value == "(" || value == ")"){
-				wordToArray(word)
-				wordToArray(value)
-				word = ""
-			} else if (value == "\r"){
-				wordToArray(word)
-				word = ""
-			} else if (value == "\n"){
-				newP = true
-				wordToArray("")
-			} else if (arrTemp[key+1] != " "){
-				if (arrTemp[key+1] == "\r" || arrTemp[key+1] == undefined || arrTemp[key+1] == "\""){
+	eachOfSeries(
+		arrTemp,
+		function (value, key, callback){
+			try {
+				if (value.match(/^([A-Z]|[a-z]|[0-9])/)){
+					word += value;
+				} else if (value.match(" ")){
+					wordToArray(word)
+					word = ""
+				} else if (value == "\"" || value == "'" || value == "(" || value == ")"){
+					wordToArray(word)
+					wordToArray(value)
+					word = ""
+				} else if (value == "\r"){
+					wordToArray(word)
+					word = ""
+				} else if (value == "\n"){
+					newP = true
+					wordToArray("")
+				} else if (arrTemp[key+1] != " "){
+					if (arrTemp[key+1] == "\r" || arrTemp[key+1] == undefined || arrTemp[key+1] == "\""){
+						wordToArray(word)
+						word = value
+					} else {
+						word += value
+					}
+				} else {
 					wordToArray(word)
 					word = value
-				} else {
-					word += value
 				}
-			} else {
-				wordToArray(word)
-				word = value
+	        } catch (err) {
+	            return callback(err)
+	        }
+			callback();
+		},
+		function(err){
+			wordToArray(word)
+			console.log("Tokenizer done")
+			if(err){
+				console.log(err)
 			}
-        } catch (err) {
-            return callback(err)
-        }
-		callback();
-	}, function(err){
-		wordToArray(word)
-		console.log("Tokenizer done")
-		if(err){
-			console.log(err)
 		}
-	});
+	);
 
 
 	/* not used in the moment */

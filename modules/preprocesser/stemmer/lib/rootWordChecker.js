@@ -1,10 +1,7 @@
-var kata-dasar = require("../../../../models/kata-dasar.js").get;
+var katadasar = require("../../../../models/kata-dasar.js").get;
 
-var stemEngine = function(word){
-	
-	word = suffix(word);
-	word = preffix(word);
-	
+var rootWordChecker = function(word){
+
 	return word;
 }
-module.exports = stemEngine;
+module.exports = rootWordChecker;
