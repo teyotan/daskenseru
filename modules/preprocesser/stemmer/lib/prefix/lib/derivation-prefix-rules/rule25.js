@@ -1,15 +1,15 @@
-//rule 1b : berV -> be-rV
+//rule 25 : pem{b|f|v} -> pem-{b|f|v}
 
-const rule = /^ber([aiueo].*)$/
+const rule = /^pem([bfv])(.*)$/
 
 const ruleMatch = function(word){
 	return word.word.match(rule) ? true : false
 }
 
 const ruleCut = function(word){
-	word.word = word.word.slice(2)
-	
-	word.removedPrefix = 'be'
+	word.word = word.word.slice(3)
+
+	word.removedPrefix = 'pem'
 	return word
 }
 

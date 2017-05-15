@@ -9,6 +9,7 @@ const ruleMatch = function(word){
 const ruleCut = function(word){
 	word.word = word.word.slice(3)
 
+	word.removedPrefix = 'ber'
 	return word
 }
 

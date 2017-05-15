@@ -9,6 +9,8 @@ const ruleMatch = function(word){
 const ruleCut = function(word){
 	word.word = word.word.slice(4)
 	word.word = 'p' + word.word
+
+	word.removedPrefix = 'meng'
 	return word
 }
 

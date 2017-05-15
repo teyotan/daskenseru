@@ -1,15 +1,16 @@
-//rule 1b : berV -> be-rV
+//rule 31 : penyV -> peny-sV
 
-const rule = /^ber([aiueo].*)$/
+const rule = /^peny([aiueo])(.*)$/
 
 const ruleMatch = function(word){
 	return word.word.match(rule) ? true : false
 }
 
 const ruleCut = function(word){
-	word.word = word.word.slice(2)
-	
-	word.removedPrefix = 'be'
+	word.word = word.word.slice(4)
+	word.word = 's' + word.word
+
+	word.removedPrefix = 'peny'
 	return word
 }
 

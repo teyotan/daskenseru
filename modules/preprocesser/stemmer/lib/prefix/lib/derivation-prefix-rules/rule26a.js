@@ -1,6 +1,6 @@
-//rule 1b : berV -> be-rV
+//rule 26a : pem{rV|V} -> pe-m{rV|V}
 
-const rule = /^ber([aiueo].*)$/
+const rule = /^pem(r)?([aiueo])(.*)$/
 
 const ruleMatch = function(word){
 	return word.word.match(rule) ? true : false
@@ -8,8 +8,8 @@ const ruleMatch = function(word){
 
 const ruleCut = function(word){
 	word.word = word.word.slice(2)
-	
-	word.removedPrefix = 'be'
+
+	word.removedPrefix = 'pe'
 	return word
 }
 

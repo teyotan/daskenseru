@@ -1,6 +1,6 @@
-//rule 21a : perV -> per-V
+//rule 35 : terC1erC2 -> ter-C1erC2 where C1!=‘r’
 
-const rule = /^per([aiueo])(.*)$/
+const rule = /^ter([bcdfghjklmnpqstvwxyz])(er)([bcdfghjklmnpqrstvwxyz])(.*)$/
 
 const ruleMatch = function(word){
 	return word.word.match(rule) ? true : false
@@ -9,7 +9,7 @@ const ruleMatch = function(word){
 const ruleCut = function(word){
 	word.word = word.word.slice(3)
 
-	word.removedPrefix = 'per'
+	word.removedPrefix = 'ter'
 	return word
 }
 

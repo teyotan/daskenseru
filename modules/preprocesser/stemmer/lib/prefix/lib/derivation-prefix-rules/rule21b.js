@@ -1,4 +1,4 @@
-//rule 21a : perV -> pe-rV
+//rule 21b : perV -> pe-rV
 
 const rule = /^per([aiueo])(.*)$/
 
@@ -9,6 +9,7 @@ const ruleMatch = function(word){
 const ruleCut = function(word){
 	word.word = word.word.slice(2)
 
+	word.removedPrefix = 'pe'
 	return word
 }
 

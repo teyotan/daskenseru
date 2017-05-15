@@ -1,12 +1,20 @@
-//rule 20 : pe{w|y}V -> pe-{w|y}V
+//rule 32 : pelV -> pe-lV 
+//exception: pelajar -> ajar
 
-const rule = /^pe([wy])([aiueo])(.*)$/
+const rule = /^pel([aiueo])(.*)$/
 
 const ruleMatch = function(word){
 	return word.word.match(rule) ? true : false
 }
 
 const ruleCut = function(word){
+	if (word.word = 'pelajar'){
+		word.word = word.word.slice(3)
+		
+		word.removedPrefix = 'pel'
+		return word
+	}
+	
 	word.word = word.word.slice(2)
 
 	word.removedPrefix = 'pe'

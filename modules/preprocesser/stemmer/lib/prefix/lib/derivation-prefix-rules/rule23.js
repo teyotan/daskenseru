@@ -1,15 +1,15 @@
-//rule 1b : berV -> be-rV
+//rule 23 : perCAP -> per-CAP where C!=‘r’ and P!=‘er’
 
-const rule = /^ber([aiueo].*)$/
+const rule = /^per([bcdfghjklmnpqstvwxyz])([a-z])(?!er)(.*)$/
 
 const ruleMatch = function(word){
 	return word.word.match(rule) ? true : false
 }
 
 const ruleCut = function(word){
-	word.word = word.word.slice(2)
-	
-	word.removedPrefix = 'be'
+	word.word = word.word.slice(3)
+
+	word.removedPrefix = 'per'
 	return word
 }
 
