@@ -1,3 +1,5 @@
+//rule 38 : keA -> ke-A
+
 const rule = /^ke(.*)$/
 
 const ruleMatch = function(word){
@@ -5,10 +7,12 @@ const ruleMatch = function(word){
 }
 
 const ruleCut = function(word){
-	word.word = word.word.slice(2)
+	let temp = Object.assign({}, word)
 
-	word.removedPrefix = 'se'
-	return word
+	temp.word = temp.word.slice(2)
+
+	temp.removedPrefix = 'se'
+	return temp
 }
 
 exports.ruleMatch = ruleMatch

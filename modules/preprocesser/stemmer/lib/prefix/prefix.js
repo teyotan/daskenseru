@@ -10,7 +10,7 @@ const prefix = function(word, skipInvalidAffixes){
 				return word
 			}
 		}
-
+		
 		word = cutPrefix(word)
 	}
 

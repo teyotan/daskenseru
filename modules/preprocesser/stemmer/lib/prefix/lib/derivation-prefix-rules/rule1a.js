@@ -7,10 +7,12 @@ const ruleMatch = function(word){
 }
 
 const ruleCut = function(word){
-	word.word = word.word.slice(3)
+	let temp = Object.assign({}, word)
+	
+	temp.word = temp.word.slice(3)
 
-	word.removedPrefix = 'ber'
-	return word
+	temp.removedPrefix = 'ber'
+	return temp
 }
 
 exports.ruleMatch = ruleMatch
