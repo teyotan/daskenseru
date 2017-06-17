@@ -12,25 +12,25 @@ var suffixStemmer = function(word){
 	/* FASE I */
 	if (word.word.match(/lah$/)){
 		word.word.replace(/lah$/, "");
-		word.removedSuffix = "lah";
+		word.removedSuffix = "lah" + word.removedSuffix;
 	}
 	else if (word.word.match(/kah$/)){
 		word.word.replace(/kah$/, "");
-		word.removedSuffix = "kah";
+		word.removedSuffix = "kah" + word.removedSuffix;
 	}
 	
 	/* FASE II */
 	if (word.word.match(/ku$/)){
 		word.word.replace(/ku$/, "");
-		word.removedSuffix = "ku";
+		word.removedSuffix = "ku" + word.removedSuffix;
 	}
 	else if (word.word.match(/mu$/)){
 		word.word.replace(/mu$/, "");
-		word.removedSuffix = "mu";
+		word.removedSuffix = "mu" + word.removedSuffix;
 	}
 	else if (word.word.match(/nya$/)){
 		word.word.replace(/nya$/, "");
-		word.removedSuffix = "nya";
+		word.removedSuffix = "nya" + word.removedSuffix;
 	}
 	
 	return word;
