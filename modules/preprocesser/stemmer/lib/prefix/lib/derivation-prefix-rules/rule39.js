@@ -1,3 +1,5 @@
+//rule 39 : seA -> se-A
+
 const rule = /^se(.*)$/
 
 const ruleMatch = function(word){
@@ -5,10 +7,12 @@ const ruleMatch = function(word){
 }
 
 const ruleCut = function(word){
-	word.word = word.word.slice(2)
+	let temp = Object.assign({}, word)
+	
+	temp.word = temp.word.slice(2)
 
-	word.removedPrefix = 'se'
-	return word
+	temp.removedPrefix = 'se'
+	return temp
 }
 
 exports.ruleMatch = ruleMatch

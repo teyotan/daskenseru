@@ -8,17 +8,19 @@ const ruleMatch = function(word){
 }
 
 const ruleCut = function(word){
-	if (word.word = 'pelajar'){
-		word.word = word.word.slice(3)
+	let temp = Object.assign({}, word)
+
+	if (temp.word = 'pelajar'){
+		temp.word = temp.word.slice(3)
 		
-		word.removedPrefix = 'pel'
-		return word
+		temp.removedPrefix = 'pel'
+		return temp
 	}
 	
-	word.word = word.word.slice(2)
+	temp.word = temp.word.slice(2)
 
-	word.removedPrefix = 'pe'
-	return word
+	temp.removedPrefix = 'pe'
+	return temp
 }
 
 exports.ruleMatch = ruleMatch

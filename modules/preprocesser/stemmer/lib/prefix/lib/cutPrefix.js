@@ -13,8 +13,17 @@ prefixRules.forEach(
 	}
 )
 
+const stubCekKamus = function(word){
+	console.log("jalanin stub")
+	if(word.word == "tangkal") { return true }
+	if(word.word == "tangkap") { return true }
+	if(word.word == "nukik") { return true }
+	return false
+}
+
 const cutPrefix = function(word){
 	let done = false
+	let temp = null
 
 	until(
 		function(){ 
@@ -24,9 +33,17 @@ const cutPrefix = function(word){
 			prefixRules,
 			function(item, callback){
 				if (item.ruleMatch(word)){
-					word = item.ruleCut(word)
-					return callback('break')
+					if(stubCekKamus(item.ruleCut(word))){
+						word = item.ruleCut(word)
+						temp = null
+						return callback('break')
+					} else {
+						if (!temp) {
+							temp = item.ruleCut(word)
+						}
+					}
 				}
+
 				callback()
 			},
 			function(err){
@@ -45,6 +62,7 @@ const cutPrefix = function(word){
 		}
 	)
 
+	if(temp){return temp}
 	return word
 }
 
