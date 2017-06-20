@@ -9,9 +9,13 @@ var rootWordChecker = function(word){
 		if(katadasar[i] === word.word){
 			isFound = true;
 		}
+		i++;
 	}
 
 	word.found = isFound;
+	console.log(word.word);
+	console.log(word.found);
+	console.log("Root Word Checker Done!");
 	
 	return word;
 }

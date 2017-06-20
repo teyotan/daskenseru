@@ -1,4 +1,4 @@
-var katadasar = require("../../../../models/kata-dasar.js").get;
+var rootWordChecker = require("./rootWordChecker.js");
 
 var suffixStemmer = function(word){
 	/* 
@@ -12,41 +12,61 @@ var suffixStemmer = function(word){
 	Fase ketiga selalu menyimpan suffix yang dihapus
 	*/
 	
-	/* FASE I */
-	if (word.word.match(/lah$/)){
-		word.word.replace(/lah$/, "");
-	}
-	else if (word.word.match(/kah$/)){
-		word.word.replace(/kah$/, "");
+	var temp;
+	rootWordChecker(word);
+	
+	if (!word.found){
+		/* FASE I */
+		if (word.word.match(/lah$/)){
+			temp = word.word.replace(/lah$/, "");
+		}
+		else if (word.word.match(/kah$/)){
+			temp = word.word.replace(/kah$/, "");
+		}
 	}
 	
 	/* FASE II */
-	if (word.word.match(/ku$/)){
-		word.word.replace(/ku$/, "");
+	if (!word.found){
+		if (word.word.match(/ku$/)){
+			temp = word.word.replace(/ku$/, "");
+		}
+		else if (word.word.match(/mu$/)){
+			temp = word.word.replace(/mu$/, "");
+		}
+		else if (word.word.match(/nya$/)){
+			temp = word.word.replace(/nya$/, "");
+			// word.removedSuffix = "nya" + word.removedSuffix;
+		}
 	}
-	else if (word.word.match(/mu$/)){
-		word.word.replace(/mu$/, "");
+	
+	if (temp){
+		word.word = temp; // Simpan hasil pemotongan
 	}
-	else if (word.word.match(/nya$/)){
-		word.word.replace(/nya$/, "");
-		// word.removedSuffix = "nya" + word.removedSuffix;
-	}
+	
+	rootWordChecker(word);
 	
 	/* FASE III */
-	if (word.word.match(/i$/)){
-		word.word.replace(/i$/, "");
-		word.removedSuffix = "i";
-	}
-	else if (word.word.match(/an$/)){
-		word.word.replace(/an$/, "");
-		word.removedSuffix = "an";
+	if (!word.found){
+		if (word.word.match(/i$/)){
+			temp = word.word.replace(/i$/, "");
+			word.removedSuffix = "i";
+		}
+		else if (word.word.match(/an$/)){
+			temp = word.word.replace(/an$/, "");
+			word.removedSuffix = "an";
+		}
+		else if (word.word.match(/kan$/)){
+			temp = word.word.replace(/kan$/, "");
+			word.removedSuffix = "kan";
+		}
 	}
 	
-	else if (word.word.match(/kan$/)){
-		word.word.replace(/kan$/, "");
-		word.removedSuffix = "kan";
+	if (temp){
+		word.word = temp; // Simpan hasil pemotongan
 	}
 	
+	rootWordChecker(word);
+		
 	return word;
 }
 module.exports = suffixStemmer;
