@@ -6,7 +6,7 @@ var rootWordChecker = function(word){
 	var i = 0;
 	
 	while(i < katadasar.length && !isFound){
-		if(katadasar[i] === word.word){
+		if(katadasar[i] === word.word.toLowerCase()){
 			isFound = true;
 		}
 		i++;
