@@ -1,3 +1,6 @@
+//TODO
+//Di bikin async
+
 var katadasar = require("../../../../models/kata-dasar.js").get;
 
 var rootWordChecker = function(word){
@@ -13,8 +16,7 @@ var rootWordChecker = function(word){
 	}
 
 	word.found = isFound;
-	console.log(word.word);
-	console.log(word.found);
+	
 	console.log("Root Word Checker Done!");
 	
 	return word;

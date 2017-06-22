@@ -2,11 +2,11 @@
 
 const rule = /^memp([abcdfghijklmopqrstuvwxyz])(.*)$/
 
-const ruleMatch = function(word){
+const ruleMatch19 = function(word){
 	return word.word.match(rule) ? true : false
 }
 
-const ruleCut = function(word){
+const ruleCut19 = function(word){
 	let temp = Object.assign({}, word)
 	
 	temp.word = temp.word.slice(3)
@@ -15,5 +15,5 @@ const ruleCut = function(word){
 	return temp
 }
 
-exports.ruleMatch = ruleMatch
-exports.ruleCut = ruleCut
+exports.ruleMatch = ruleMatch19
+exports.ruleCut = ruleCut19

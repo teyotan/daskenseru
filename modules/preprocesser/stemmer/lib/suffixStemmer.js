@@ -13,7 +13,7 @@ var suffixStemmer = function(word){
 	*/
 	
 	var temp;
-	rootWordChecker(word);
+	word = rootWordChecker(word);
 	
 	if (!word.found){
 		/* FASE I */
@@ -43,7 +43,7 @@ var suffixStemmer = function(word){
 		word.word = temp; // Simpan hasil pemotongan
 	}
 	
-	rootWordChecker(word);
+	word = rootWordChecker(word);
 	
 	/* FASE III */
 	if (!word.found){
@@ -51,13 +51,13 @@ var suffixStemmer = function(word){
 			temp = word.word.replace(/i$/, "");
 			word.removedSuffix = "i";
 		}
-		else if (word.word.match(/an$/)){
-			temp = word.word.replace(/an$/, "");
-			word.removedSuffix = "an";
-		}
 		else if (word.word.match(/kan$/)){
 			temp = word.word.replace(/kan$/, "");
 			word.removedSuffix = "kan";
+		}
+		else if (word.word.match(/an$/)){
+			temp = word.word.replace(/an$/, "");
+			word.removedSuffix = "an";
 		}
 	}
 	
@@ -65,8 +65,8 @@ var suffixStemmer = function(word){
 		word.word = temp; // Simpan hasil pemotongan
 	}
 	
-	rootWordChecker(word);
-		
+	word = rootWordChecker(word);
+	
 	return word;
 }
 module.exports = suffixStemmer;

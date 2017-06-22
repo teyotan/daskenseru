@@ -13,18 +13,26 @@ const stemEngine = function(word){
 
 	if (rulePrecedence(tempWord)){
 		console.log("RULEPRECEDENCE:" + tempWord.word)
-		tempWord = prefix(suffix(tempWord))
-	} else {
 		tempWord = suffix(prefix(tempWord))
+	} else {
+		console.log("suffix dulu??")
+		tempWord = prefix(suffix(tempWord))
+		console.log(tempWord.word)
 	}
 	
 	if (!tempWord.found){
-		if(tempWord.removedSuffix.match(/an|kan|i/))
-		tempWord.word = tempWord.word + tempWord.removedSuffix
-		tempWord.removedSuffix = ""
-		tempWord = prefix(tempWord, true)
+		console.log("pieceofshit")
+		if(tempWord.removedSuffix.match(/an|kan|i/)){
+			tempWord.word = tempWord.word + tempWord.removedSuffix
+			tempWord.removedSuffix = ""
+		}
+		tempWord = prefix(suffix(tempWord), true)
 	}
 
-	return tempWord.word
+	if (tempWord.found){
+		return tempWord.word
+	}
+
+	return word
 }
 module.exports = stemEngine;

@@ -2,11 +2,11 @@
 
 const rule = /^meng([ghqk])(.*)$/
 
-const ruleMatch = function(word){
+const ruleMatch16 = function(word){
 	return word.word.match(rule) ? true : false
 }
 
-const ruleCut = function(word){
+const ruleCut16 = function(word){
 	let temp = Object.assign({}, word)
 
 	temp.word = temp.word.slice(4)
@@ -16,5 +16,5 @@ const ruleCut = function(word){
 	return temp
 }
 
-exports.ruleMatch = ruleMatch
-exports.ruleCut = ruleCut
+exports.ruleMatch = ruleMatch16
+exports.ruleCut = ruleCut16
