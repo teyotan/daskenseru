@@ -3,11 +3,11 @@
 
 const rule = /^pel([aiueo])(.*)$/
 
-const ruleMatch = function(word){
+const ruleMatch32 = function(word){
 	return word.word.match(rule) ? true : false
 }
 
-const ruleCut = function(word){
+const ruleCut32 = function(word){
 	let temp = Object.assign({}, word)
 
 	if (temp.word = 'pelajar'){
@@ -23,5 +23,5 @@ const ruleCut = function(word){
 	return temp
 }
 
-exports.ruleMatch = ruleMatch
-exports.ruleCut = ruleCut
+exports.ruleMatch = ruleMatch32
+exports.ruleCut = ruleCut32

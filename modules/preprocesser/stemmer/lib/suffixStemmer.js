@@ -51,13 +51,13 @@ var suffixStemmer = function(word){
 			temp = word.word.replace(/i$/, "");
 			word.removedSuffix = "i";
 		}
-		else if (word.word.match(/an$/)){
-			temp = word.word.replace(/an$/, "");
-			word.removedSuffix = "an";
-		}
 		else if (word.word.match(/kan$/)){
 			temp = word.word.replace(/kan$/, "");
 			word.removedSuffix = "kan";
+		}
+		else if (word.word.match(/an$/)){
+			temp = word.word.replace(/an$/, "");
+			word.removedSuffix = "an";
 		}
 	}
 	
@@ -66,7 +66,7 @@ var suffixStemmer = function(word){
 	}
 	
 	word = rootWordChecker(word);
-		
+	
 	return word;
 }
 module.exports = suffixStemmer;

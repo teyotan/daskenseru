@@ -2,11 +2,11 @@
 
 const rule = /^ter([aiueo].*)$/
 
-const ruleMatch = function(word){
+const ruleMatch6a = function(word){
 	return word.word.match(rule) ? true : false
 }
 
-const ruleCut = function(word){
+const ruleCut6a = function(word){
 	let temp = Object.assign({}, word)
 	
 	temp.word = temp.word.slice(3)
@@ -15,5 +15,5 @@ const ruleCut = function(word){
 	return temp
 }
 
-exports.ruleMatch = ruleMatch
-exports.ruleCut = ruleCut
+exports.ruleMatch = ruleMatch6a
+exports.ruleCut = ruleCut6a

@@ -1,10 +1,11 @@
+//TODO
+//Perbaikin rules
+
 const fs = require('fs')
 const each = require("async/each")
 const until = require("async/until")
 
 const rulePath = '/derivation-prefix-rules/'
-
-const asd = [];
 
 const prefixRules = fs.readdirSync(__dirname + rulePath)
 prefixRules.forEach(
@@ -13,56 +14,56 @@ prefixRules.forEach(
 	}
 )
 
-const stubCekKamus = function(word){
-	console.log("jalanin stub")
-	if(word.word == "tangkal") { return true }
-	if(word.word == "tangkap") { return true }
-	if(word.word == "nukik") { return true }
-	return false
-}
+const rootWordCheck = require("../../rootWordChecker.js")
 
 const cutPrefix = function(word){
 	let done = false
 	let temp = null
 
-	until(
-		function(){ 
-			return (done) 
-		}, 
-		each(
-			prefixRules,
-			function(item, callback){
-				if (item.ruleMatch(word)){
-					if(stubCekKamus(item.ruleCut(word))){
-						word = item.ruleCut(word)
-						temp = null
-						return callback('break')
-					} else {
-						if (!temp) {
-							temp = item.ruleCut(word)
+	word = rootWordCheck(word)
+
+	if(!word.found){
+		until(
+			function(){ 
+				return (done) 
+			}, 
+			each(
+				prefixRules,
+				function(item, callback){
+					if (item.ruleMatch(word)){
+						if(rootWordCheck(item.ruleCut(word)).found){
+							if(!word.found){
+								word = item.ruleCut(word)
+								word.found = true
+								temp = null
+								return callback('break')
+							}
+						} else {
+							if (!temp) { // Untuk recording
+								temp = item.ruleCut(word)
+							}
+						}
+					}
+					callback()
+				},
+				function(err){
+					done = true
+					if (err){
+						if (err != 'break'){
+							console.log(err)
 						}
 					}
 				}
-
-				callback()
-			},
+			), 
 			function(err){
-				done = true
 				if (err){
-					if (err != 'break'){
-						console.log(err)
-					}
+					console.log(err)
 				}
 			}
-		), 
-		function(err){
-			if (err){
-				console.log(err)
-			}
-		}
-	)
+		)
+	}
 
-	if(temp){return temp}
+	if(temp && !word.found){return temp}
 	return word
 }
 
