@@ -13,7 +13,7 @@ var suffixStemmer = function(word){
 	*/
 	
 	var temp;
-	rootWordChecker(word);
+	word = rootWordChecker(word);
 	
 	if (!word.found){
 		/* FASE I */
@@ -43,7 +43,7 @@ var suffixStemmer = function(word){
 		word.word = temp; // Simpan hasil pemotongan
 	}
 	
-	rootWordChecker(word);
+	word = rootWordChecker(word);
 	
 	/* FASE III */
 	if (!word.found){
@@ -65,7 +65,7 @@ var suffixStemmer = function(word){
 		word.word = temp; // Simpan hasil pemotongan
 	}
 	
-	rootWordChecker(word);
+	word = rootWordChecker(word);
 		
 	return word;
 }
