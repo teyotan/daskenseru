@@ -19,12 +19,6 @@ var rootWordChecker = function(word){
 			isFound = true;
 		}
 	});
-	// while(i < katadasar.length && !isFound){
-		// if(katadasar[i] === word.word.toLowerCase()){
-			// isFound = true;
-		// }
-		// i++;
-	// }
 
 	word.found = isFound;
 	
