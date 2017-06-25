@@ -11,8 +11,7 @@ var rootWordChecker = function(word){
 	var i = 0;
 	
 	detect(katadasar, function(root, callback){
-		callback(root === word.word.toLowerCase());
-		
+		callback(root === word.word.toLowerCase());	
 	}, function(result){
 		if(result){
 			console.log(result);
@@ -21,8 +20,6 @@ var rootWordChecker = function(word){
 	});
 
 	word.found = isFound;
-	
-	console.log("Root Word Checker Done!");
 	
 	return word;
 }

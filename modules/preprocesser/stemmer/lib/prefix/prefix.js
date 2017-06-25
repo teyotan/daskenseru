@@ -6,7 +6,7 @@ const invalidAffixes = require("./lib/invalidAffixes.js")
 const cutPrefix = require("./lib/cutPrefix.js")
 
 const prefix = function(word, skipInvalidAffixes){
-	console.log(word.word)
+	console.log("bfore prefix" + word.word)
 
 	for (let i = 0; i < 3; i++) {
 		word = word
@@ -21,7 +21,7 @@ const prefix = function(word, skipInvalidAffixes){
 			word = cutPrefix(word)
 		}	
 	}
-
+	console.log("prefix" + word.word)
 	return word
 }
 

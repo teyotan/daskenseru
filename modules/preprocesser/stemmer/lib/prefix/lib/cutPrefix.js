@@ -1,6 +1,3 @@
-//TODO
-//Perbaikin rules
-
 const fs = require('fs')
 const each = require("async/each")
 const until = require("async/until")

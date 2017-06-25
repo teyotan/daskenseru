@@ -17,7 +17,6 @@ const stemEngine = function(word){
 	} else {
 		console.log("suffix dulu??")
 		tempWord = prefix(suffix(tempWord))
-		console.log(tempWord.word)
 	}
 	
 	if (!tempWord.found){
@@ -31,6 +30,12 @@ const stemEngine = function(word){
 
 	if (tempWord.found){
 		return tempWord.word
+	} else {
+		tempWord.word = word
+		tempWord = suffix(prefix(tempWord, true))
+		if (tempWord.found){
+			return tempWord.word
+		}
 	}
 
 	return word
