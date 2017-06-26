@@ -3,7 +3,7 @@
 const rule = /^pen([cdjz])(.*)$/
 
 const ruleMatch27 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut27 = function(word){

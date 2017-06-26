@@ -3,7 +3,7 @@
 const rule = /^mem(r)?([aiueo])(.*)$/
 
 const ruleMatch13a = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut13a = function(word){

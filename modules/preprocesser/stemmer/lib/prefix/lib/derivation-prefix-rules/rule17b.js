@@ -3,7 +3,7 @@
 const rule = /^meng([aiueo])(.*)$/
 
 const ruleMatch17b = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut17b = function(word){

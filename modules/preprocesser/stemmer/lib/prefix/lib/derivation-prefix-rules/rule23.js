@@ -3,7 +3,7 @@
 const rule = /^per([bcdfghjklmnpqstvwxyz])([a-z])(?!er)(.*)$/
 
 const ruleMatch23 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut23 = function(word){

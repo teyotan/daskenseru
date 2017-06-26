@@ -3,7 +3,7 @@
 const rule = /^pem([bfv])(.*)$/
 
 const ruleMatch25 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut25 = function(word){

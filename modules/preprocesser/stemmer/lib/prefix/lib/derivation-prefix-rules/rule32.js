@@ -4,7 +4,7 @@
 const rule = /^pel([aiueo])(.*)$/
 
 const ruleMatch32 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut32 = function(word){

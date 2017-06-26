@@ -3,7 +3,7 @@
 const rule = /^ber([bcdfghjklmnpqstvwxyz])([a-z])(?!er)(.*)$/
 
 const ruleMatch2 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut2 = function(word){

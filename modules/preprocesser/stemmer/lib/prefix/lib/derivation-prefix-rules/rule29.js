@@ -3,7 +3,7 @@
 const rule = /^peng([ghq])(.*)$/
 
 const ruleMatch29 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut29 = function(word){

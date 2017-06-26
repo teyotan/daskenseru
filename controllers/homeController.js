@@ -5,6 +5,7 @@ const preprocesser = require('../modules/preprocesser')
 const analyzer = require('../modules/analyzer').analyze
 
 const Layout = require("../views/components/layout.js")
+const Tokenized = require("../views/components/tokenized.js")
 
 const index = function(req, res, next) {
 	var arr = preprocesser(req.body.text);
@@ -12,7 +13,7 @@ const index = function(req, res, next) {
 	//var arr = analyzer(arr);
 
 	res.send(
-		ReactDOMServer.renderToStaticMarkup(
+		ReactDOMServer.renderToString(
 			React.createElement(Layout, {tokenized: arr.tokenized, stemmed: arr.stemmed}, null)
 		)
 	)

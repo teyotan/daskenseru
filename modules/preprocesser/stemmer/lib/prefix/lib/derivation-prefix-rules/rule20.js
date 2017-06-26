@@ -3,7 +3,7 @@
 const rule = /^pe([wy])([aiueo])(.*)$/
 
 const ruleMatch20 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut20 = function(word){

@@ -1,4 +1,11 @@
+//TODO
+//Benerin paragraph
+//Kasih template
+
 const React = require('react')
+
+const Tokenized = require('./tokenized.js')
+const Stemmed = require('./stemmed.js')
 
 class Layout extends React.Component {
 	render(){
@@ -6,14 +13,14 @@ class Layout extends React.Component {
 			'div', 
 			null, 
 			React.createElement(
-				'div',
-				null,
-				`Tokenized : ${this.props.tokenized}` //NOTICE: bukan apostrophe (petik 1), tapi grave accent
+				Tokenized,
+				{tokenized: this.props.tokenized},
+				null
 			),
 			React.createElement(
-				'div',
-				null,
-				`Stemmed : ${this.props.stemmed}`
+				Stemmed,
+				{stemmed: this.props.stemmed},
+				null
 			)
 		)
 	}

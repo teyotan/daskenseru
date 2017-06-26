@@ -3,7 +3,7 @@
 const rule = /^peny([aiueo])(.*)$/
 
 const ruleMatch31 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut31 = function(word){
