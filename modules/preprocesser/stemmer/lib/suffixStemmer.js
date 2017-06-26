@@ -67,6 +67,7 @@ var suffixStemmer = function(word){
 	
 	word = rootWordChecker(word);
 	
+	console.log("suffix" + word.word)
 	return word;
 }
 module.exports = suffixStemmer;

@@ -8,7 +8,14 @@ var preprocessing = function(str){
 
 	let tokenized = tokenizer(str)
 
-	return stemmer(tokenized)
+	let stemmed = JSON.parse(JSON.stringify(tokenized));
+
+	stemmed = stemmer(stemmed)
+
+	return {
+		tokenized: tokenized,
+		stemmed: stemmed,
+	}
 }
 
 module.exports = preprocessing
