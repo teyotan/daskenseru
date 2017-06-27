@@ -3,7 +3,7 @@
 const rule = /^berlajar(.*)$/
 
 const ruleMatch4 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut4 = function(word){

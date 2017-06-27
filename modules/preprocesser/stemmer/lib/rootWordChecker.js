@@ -10,8 +10,10 @@ var rootWordChecker = function(word){
 	var isFound = false;
 	var i = 0;
 	
-	detect(katadasar, function(root, callback){
-		callback(root === word.word.toLowerCase());	
+	let lowerCasedWord = word.word.toLowerCase()
+
+	detect(katadasar[lowerCasedWord[0]], function(root, callback){
+		callback(root === lowerCasedWord);	
 	}, function(result){
 		if(result){
 			console.log(result);

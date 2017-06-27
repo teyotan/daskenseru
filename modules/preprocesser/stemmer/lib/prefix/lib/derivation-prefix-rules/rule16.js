@@ -3,7 +3,7 @@
 const rule = /^meng([ghqk])(.*)$/
 
 const ruleMatch16 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut16 = function(word){

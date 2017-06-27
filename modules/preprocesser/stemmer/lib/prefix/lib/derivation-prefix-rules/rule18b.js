@@ -1,18 +1,18 @@
-//rule 18 : menyV -> meny-sV
+//rule 18b : menyV -> me-nyV
+//Rule ngarang, supaya bisa stem 'menyatakan'
 
 const rule = /^meny([aiueo])(.*)$/
 
 const ruleMatch18 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut18 = function(word){
 	let temp = Object.assign({}, word)
 	
-	temp.word = temp.word.slice(4)
-	temp.word = 's' + temp.word
+	temp.word = temp.word.slice(2)
 
-	temp.removedPrefix = 'meny'
+	temp.removedPrefix = 'me'
 	return temp
 }
 

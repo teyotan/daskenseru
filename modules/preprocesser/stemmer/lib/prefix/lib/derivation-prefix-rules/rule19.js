@@ -3,7 +3,7 @@
 const rule = /^memp([abcdfghijklmopqrstuvwxyz])(.*)$/
 
 const ruleMatch19 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut19 = function(word){

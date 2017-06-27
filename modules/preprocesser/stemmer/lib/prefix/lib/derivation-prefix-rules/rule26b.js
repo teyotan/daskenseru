@@ -3,7 +3,7 @@
 const rule = /^pem(r)?([aiueo])(.*)$/
 
 const ruleMatch26b = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut26b = function(word){

@@ -3,7 +3,7 @@
 const rule = /^ter([aiueo].*)$/
 
 const ruleMatch6b = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut6b = function(word){

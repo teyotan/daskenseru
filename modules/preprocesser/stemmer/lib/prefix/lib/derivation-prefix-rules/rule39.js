@@ -3,7 +3,7 @@
 const rule = /^se(.*)$/
 
 const ruleMatch39 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut39 = function(word){

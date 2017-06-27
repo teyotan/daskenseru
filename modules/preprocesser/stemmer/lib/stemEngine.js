@@ -11,6 +11,10 @@ const stemEngine = function(word){
 		found: false,
 	}
 
+	if(word.length < 4){
+		return word
+	}
+
 	if (rulePrecedence(tempWord)){
 		console.log("RULEPRECEDENCE:" + tempWord.word)
 		tempWord = suffix(prefix(tempWord))

@@ -3,7 +3,7 @@
 const rule = /^ter([bcdfghjklmnpqstvwxyz])(?!er)(.*)$/
 
 const ruleMatch8 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut8 = function(word){

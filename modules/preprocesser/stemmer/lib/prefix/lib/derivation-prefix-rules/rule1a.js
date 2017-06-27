@@ -3,7 +3,7 @@
 const rule = /^ber([aiueo].*)$/
 
 const ruleMatch1a = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut1a = function(word){

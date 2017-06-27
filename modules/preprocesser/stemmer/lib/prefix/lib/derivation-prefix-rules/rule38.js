@@ -3,7 +3,7 @@
 const rule = /^ke(.*)$/
 
 const ruleMatch38 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut38 = function(word){

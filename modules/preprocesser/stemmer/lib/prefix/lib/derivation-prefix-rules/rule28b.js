@@ -3,7 +3,7 @@
 const rule = /^pen([aiueo])(.*)$/
 
 const ruleMatch28b = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut28b = function(word){

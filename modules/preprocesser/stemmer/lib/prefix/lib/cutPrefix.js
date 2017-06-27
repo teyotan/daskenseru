@@ -20,6 +20,7 @@ const cutPrefix = function(word){
 	word = rootWordCheck(word)
 
 	if(!word.found){
+		let lowercased = word.word.toLowerCase()
 		until(
 			function(){ 
 				return (done) 
@@ -27,7 +28,7 @@ const cutPrefix = function(word){
 			each(
 				prefixRules,
 				function(item, callback){
-					if (item.ruleMatch(word)){
+					if (item.ruleMatch(lowercased)){
 						if(rootWordCheck(item.ruleCut(word)).found){
 							if(!word.found){
 								word = item.ruleCut(word)

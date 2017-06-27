@@ -3,7 +3,7 @@
 const rule = /^me([lrwy])([aiueo])(.*)$/
 
 const ruleMatch10 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut10 = function(word){

@@ -3,7 +3,7 @@
 const rule = /^di(.*)$/
 
 const ruleMatch37 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut37 = function(word){

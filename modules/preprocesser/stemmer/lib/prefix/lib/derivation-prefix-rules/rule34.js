@@ -3,7 +3,7 @@
 const rule = /^pe([bcdfghjkpqstvxz])(?!er)(.*)$/
 
 const ruleMatch34 = function(word){
-	return word.word.match(rule) ? true : false
+	return word.match(rule) ? true : false
 }
 
 const ruleCut34 = function(word){
