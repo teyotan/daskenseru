@@ -473,6 +473,7 @@ akmal
 akolade
 akomodasi
 akomodatif
+akomodir
 akor
 akordeon
 akrab

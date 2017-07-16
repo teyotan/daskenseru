@@ -16,18 +16,17 @@ const stemEngine = function(word){
 	}
 
 	if (rulePrecedence(tempWord)){
-		console.log("RULEPRECEDENCE:" + tempWord.word)
+		// console.log("RULEPRECEDENCE:" + tempWord.word) //debuggingnya theo
 		tempWord = suffix(prefix(tempWord))
 	} else {
-		console.log("suffix dulu??")
+		// console.log("suffix dulu??") //debuggingnya theo
 		tempWord = prefix(suffix(tempWord))
 	}
 	
 	if (!tempWord.found){
-		console.log("pieceofshit")
+		// console.log("pieceofshit") //debuggingnya theo
 		if(tempWord.removedSuffix.match(/an|kan|i/)){
 			tempWord.word = tempWord.word + tempWord.removedSuffix
-			tempWord.removedSuffix = ""
 		}
 		tempWord = prefix(suffix(tempWord), true)
 	}

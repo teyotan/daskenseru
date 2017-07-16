@@ -21,6 +21,11 @@ class Layout extends React.Component {
 				Stemmed,
 				{stemmed: this.props.stemmed},
 				null
+			),
+			React.createElement(
+				'div',
+				null,
+				this.props.children
 			)
 		)
 	}

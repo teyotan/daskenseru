@@ -16,7 +16,7 @@ var rootWordChecker = function(word){
 		callback(root === lowerCasedWord);	
 	}, function(result){
 		if(result){
-			console.log(result);
+			// console.log(result);
 			isFound = true;
 		}
 	});

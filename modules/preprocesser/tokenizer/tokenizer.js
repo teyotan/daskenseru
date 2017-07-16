@@ -9,7 +9,7 @@ var tokenizer = function(str){
 	var word = "";
 	var newP = true;
 
-	var wordToArray = function(word){
+	const wordToArray = function(word){
 		if (word != "") {
 			if (newP){
 				arr.push([])
@@ -19,55 +19,56 @@ var tokenizer = function(str){
 			arr[arr.length-1].push(word);
 		}
 	}
-
-	eachOfSeries(
-		arrTemp,
-		function (value, key, callback){
-			try {
-				if (value.match(/^([A-Z]|[a-z]|[0-9])/)){
-					word += value;
-				} else if (value.match(" ")){
-					wordToArray(word)
-					word = ""
-				} else if (value == "\"" || value == "'" || value == "(" || value == ")"){
-					wordToArray(word)
-					wordToArray(value)
-					word = ""
-				} else if (value == "\r"){
-					wordToArray(word)
-					word = ""
-				} else if (value == "\n"){
-					newP = true
-					wordToArray("")
-				} else if (arrTemp[key+1] != " "){
-					if (arrTemp[key+1] == "\r" || arrTemp[key+1] == undefined || arrTemp[key+1] == "\""){
+	
+	return new Promise ((resolve, reject) => {
+		eachOfSeries(
+			arrTemp,
+			function (value, key, callback){
+				try {
+					if (value.match(/^([A-Z]|[a-z]|[0-9])/)){
+						word += value;
+					} else if (value.match(" ")){
+						wordToArray(word)
+						word = ""
+					} else if (value == "\"" || value == "'" || value == "(" || value == ")"){
+						wordToArray(word)
+						wordToArray(value)
+						word = ""
+					} else if (value == "\r"){
+						wordToArray(word)
+						word = ""
+					} else if (value == "\n"){
+						newP = true
+						wordToArray("")
+					} else if (arrTemp[key+1] != " "){
+						if (arrTemp[key+1] == "\r" || arrTemp[key+1] == undefined || arrTemp[key+1] == "\""){
+							wordToArray(word)
+							word = value
+						} else {
+							word += value
+						}
+					} else {
 						wordToArray(word)
 						word = value
-					} else {
-						word += value
 					}
-				} else {
-					wordToArray(word)
-					word = value
+		        } catch (err) {
+		            return callback(err)
+		        }
+				callback();
+			},
+			function(err){
+				wordToArray(word)
+				console.log("Tokenizer done")
+				if(err){
+					console.log(err)
 				}
-	        } catch (err) {
-	            return callback(err)
-	        }
-			callback();
-		},
-		function(err){
-			wordToArray(word)
-			console.log("Tokenizer done")
-			if(err){
-				console.log(err)
 			}
-		}
-	);
+		);
 
-
-	/* not used in the moment */
-	// removeInvalidEOS(arr);
-	return arr;
+		/* not used in the moment */
+		// removeInvalidEOS(arr);
+		resolve(arr)
+	})
 }
 
 module.exports = tokenizer;
