@@ -11,7 +11,7 @@ var suffixStemmer = function(word){
 	Fase kedua dapat dijalankan tanpa perduli dijalankan atau tidaknya fase pertama
 	Fase ketiga selalu menyimpan suffix yang dihapus
 	*/
-	
+
 	var temp;
 	word = rootWordChecker(word);
 	
@@ -31,7 +31,7 @@ var suffixStemmer = function(word){
 			temp = word.word.slice(0, -2)
 		}
 		else if (word.word.match(/mu$/)){
-			temp = word.word.slice(0, -3)
+			temp = word.word.slice(0, -2)
 		}
 		else if (word.word.match(/nya$/)){
 			temp = word.word.slice(0, -3)
@@ -48,7 +48,7 @@ var suffixStemmer = function(word){
 	/* FASE III */
 	if (!word.found){
 		if (word.word.match(/i$/)){
-			temp = word.word.slice(0, -2)
+			temp = word.word.slice(0, -1)
 			word.removedSuffix = "i"
 		}
 		else if (word.word.match(/kan$/)){
