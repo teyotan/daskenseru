@@ -29,6 +29,7 @@ const cutPrefix = function(word){
 				prefixRules,
 				function(item, callback){
 					if (item.ruleMatch(lowercased)){
+						// console.log(item) //show which rules
 						if(rootWordCheck(item.ruleCut(word)).found){
 							if(!word.found){
 								word = item.ruleCut(word)

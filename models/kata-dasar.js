@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const text = 'assets/kata-dasar.txt';
+// const text = 'assets/kata-dasar.txt';
 
 const dictionaryPath = './assets/kata-dasar/'
 
@@ -15,8 +15,8 @@ rootWordDictionary.forEach(
 	}
 )
 
-const array = fs.readFileSync(text).toString().replace(/\r\n/g,'\n').split("\n");
+// const array = fs.readFileSync(text).toString().replace(/\r\n/g,'\n').split("\n");
 
-exports.getdepreciated = array; // Bagian ngeluarin
+// exports.getdepreciated = array; // Bagian ngeluarin
 
 exports.get = rootWordModel

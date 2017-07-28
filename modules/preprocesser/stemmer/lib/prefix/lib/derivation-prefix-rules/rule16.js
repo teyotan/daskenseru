@@ -10,7 +10,6 @@ const ruleCut16 = function(word){
 	let temp = Object.assign({}, word)
 
 	temp.word = temp.word.slice(4)
-	temp.word = 'p' + temp.word
 
 	temp.removedPrefix = 'meng'
 	return temp

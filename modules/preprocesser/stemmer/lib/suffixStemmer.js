@@ -11,30 +11,30 @@ var suffixStemmer = function(word){
 	Fase kedua dapat dijalankan tanpa perduli dijalankan atau tidaknya fase pertama
 	Fase ketiga selalu menyimpan suffix yang dihapus
 	*/
-	
+
 	var temp;
 	word = rootWordChecker(word);
 	
 	if (!word.found){
 		/* FASE I */
 		if (word.word.match(/lah$/)){
-			temp = word.word.replace(/lah$/, "");
+			temp = word.word.slice(0, -3)
 		}
 		else if (word.word.match(/kah$/)){
-			temp = word.word.replace(/kah$/, "");
+			temp = word.word.slice(0, -3)
 		}
 	}
 	
 	/* FASE II */
 	if (!word.found){
 		if (word.word.match(/ku$/)){
-			temp = word.word.replace(/ku$/, "");
+			temp = word.word.slice(0, -2)
 		}
 		else if (word.word.match(/mu$/)){
-			temp = word.word.replace(/mu$/, "");
+			temp = word.word.slice(0, -2)
 		}
 		else if (word.word.match(/nya$/)){
-			temp = word.word.replace(/nya$/, "");
+			temp = word.word.slice(0, -3)
 			// word.removedSuffix = "nya" + word.removedSuffix;
 		}
 	}
@@ -48,16 +48,20 @@ var suffixStemmer = function(word){
 	/* FASE III */
 	if (!word.found){
 		if (word.word.match(/i$/)){
-			temp = word.word.replace(/i$/, "");
-			word.removedSuffix = "i";
+			temp = word.word.slice(0, -1)
+			word.removedSuffix = "i"
 		}
 		else if (word.word.match(/kan$/)){
-			temp = word.word.replace(/kan$/, "");
-			word.removedSuffix = "kan";
+			if (word.removedSuffix == "an"){
+				temp = word.word.slice(0, -3)
+				word.removedSuffix = "kan"
+			}
+			temp = word.word.slice(0, -2)
+			word.removedSuffix = "an"
 		}
 		else if (word.word.match(/an$/)){
-			temp = word.word.replace(/an$/, "");
-			word.removedSuffix = "an";
+			temp = word.word.slice(0, -2)
+			word.removedSuffix = "an"
 		}
 	}
 	
@@ -67,7 +71,7 @@ var suffixStemmer = function(word){
 	
 	word = rootWordChecker(word);
 	
-	console.log("suffix" + word.word)
+	// console.log("suffix" + word.word)
 	return word;
 }
 module.exports = suffixStemmer;

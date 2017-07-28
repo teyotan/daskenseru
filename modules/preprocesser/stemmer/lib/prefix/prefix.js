@@ -6,14 +6,14 @@ const invalidAffixes = require("./lib/invalidAffixes.js")
 const cutPrefix = require("./lib/cutPrefix.js")
 
 const prefix = function(word, skipInvalidAffixes){
-	console.log("bfore prefix" + word.word)
+	// console.log("before prefix" + word.word)
 
 	for (let i = 0; i < 3; i++) {
 		word = word
 		if(!word.found){
 			if (!skipInvalidAffixes){
 				if (invalidAffixes(word)){
-					console.log("INVALIDAFFIX:" + word.removedPrefix + "+" + word.word + "+" + word.removedSuffix)
+					// console.log("INVALIDAFFIX:" + word.removedPrefix + "+" + word.word + "+" + word.removedSuffix)
 					return word
 				}
 			}
@@ -21,7 +21,7 @@ const prefix = function(word, skipInvalidAffixes){
 			word = cutPrefix(word)
 		}	
 	}
-	console.log("prefix" + word.word)
+	// console.log("prefix" + word.word)
 	return word
 }
 

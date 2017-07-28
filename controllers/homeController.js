@@ -9,21 +9,40 @@ const Tokenized = require("../views/components/tokenized.js")
 
 const logger = require('winston').loggers.get('logger')
 
+var exec = require('child_process').exec
+
 const index = function(req, res, next) {
-	let startTime = new Date();
+	let startTime = new Date()
+	var arr
+	const request = new Promise((resolve, reject) => {
+		arr = preprocesser(req.body.text)
 
-	var arr = preprocesser(req.body.text);
+		// var cmd = 'java -cp "C:\\Program Files\\Weka-3-8\\weka.jar" weka.classifiers.trees.J48 -t "C:\\Program Files\\Weka-3-8\\data\\iris.arff"'
 
-	let endTime = new Date();
+		// exec(cmd, function(error, stdout, stderr) {
+		// 	console.log(stdout)
+		// 	return;
+		// });
+
+		resolve(arr)
+	})
+	.then((arr) => {
+		let endTime = new Date()
 	
-	//var arr = analyzer(arr);
-	logger.info(req.body.text, (endTime - startTime)+'ms')
+		//var arr = analyzer(arr);
+		logger.info(req.body.text, {time: (endTime - startTime)+'ms'})
 
-	res.send(
-		ReactDOMServer.renderToString(
-			React.createElement(Layout, {tokenized: arr.tokenized, stemmed: arr.stemmed}, null)
+
+		res.send(
+			ReactDOMServer.renderToString(
+				React.createElement(Layout, {tokenized: arr.tokenized, stemmed: arr.stemmed}, null)
+			)
 		)
-	)
+	})
+	
+
+
+	
 
 };
 
