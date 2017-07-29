@@ -4,13 +4,29 @@ var HMM = require("./hmm.js");
 
 var postagger = function(word){
 	
-	tempWord = {
-		word: word,
-		POSTag: "",
-		found: false
-	}
+	// tempWord = {
+		// word: word,
+		// POSTag: "",
+		// found: false
+	// }
 	
-	console.log(inlex["y"]);
+	let lowerCasedWord = word.toLowerCase();
+	detect(inlex[lowerCasedWord[0]], function(root, callback){
+		if (root.word === lowerCasedWord) {
+			callback(null, root);
+		}
+		else{
+			callback(null);
+		}
+	}, function(err, result){
+		if(result){
+			console.log(word, result.tag);
+		}
+		else {
+			console.log(word, "NAMA");	
+		}
+	});
+	
 	var hmm = new HMM([ '1', '2', '3', 'F' ], 'F', [ 'a', 'b', 'c' ],
 	{
         1: 1
@@ -50,6 +66,8 @@ var postagger = function(word){
           a: 1
 		}
 	});
+	
+	return word;
 }
 
 module.exports = postagger;

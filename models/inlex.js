@@ -14,13 +14,14 @@ var tempArr = [];
 
 lineReader.on('line', function (line) {
   var temp = line.replace(/\t/g,' ').split(" ");
+  temp[0] = temp[1].match(/^[a-z]/) ? temp[0]+" "+temp.splice(1, 1)[0] : temp[0];
   var data = {word: temp[0], tag: temp[1]};
   if (startingCharacter !== data.word[0]){
 		if (startingCharacter){
 			inlexModel[startingCharacter] = tempArr;
-			tempArr = [];
 		}
 		startingCharacter = data.word[0];
+		tempArr = inlexModel[startingCharacter] ? inlexModel[startingCharacter] : []; // TERNYATA KAMSUSNYA GA NGURUT ALPABET CUK WKWKWK
   }
   
   tempArr.push(data);
