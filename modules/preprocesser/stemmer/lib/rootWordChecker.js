@@ -1,5 +1,3 @@
-//TODO
-//Di bikin async
 
 const detect = require("async/detect");
 

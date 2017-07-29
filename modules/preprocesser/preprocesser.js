@@ -1,9 +1,10 @@
 var tokenizer = require("./tokenizer")
 var stemmer = require("./stemmer")
+var postagger = require("./pos-tagger")
 
 var preprocessing = function(str){
 	
-	let tokenized, stemmed
+	let tokenized, stemmed, postagged
 
 	return new Promise((resolve, reject) => {
 		let tempTokenized = tokenizer(str)
@@ -16,9 +17,13 @@ var preprocessing = function(str){
 		return tempStemmed
 	}).then((tempStemmed) => {
 		stemmed = tempStemmed
+		tempPostagged  = postagger(stemmed)
+	}).then((tempPostagged) => {
+		postag = tempPostagged
 		return {
 			tokenized: tokenized,
 			stemmed: stemmed,
+			postagged: postag
 		}
 	})
 }

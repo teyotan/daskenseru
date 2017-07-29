@@ -1,6 +1,16 @@
-var HMM = require("./lib/hmm.js");
+const detect = require("async/detect");
+var inlex = require("../../../../models/inlex.js").get;
+var HMM = require("./hmm.js");
 
-var postagger = function(arr){
+var postagger = function(word){
+	
+	tempWord = {
+		word: word,
+		POSTag: "",
+		found: false
+	}
+	
+	console.log(inlex["y"]);
 	var hmm = new HMM([ '1', '2', '3', 'F' ], 'F', [ 'a', 'b', 'c' ],
 	{
         1: 1
@@ -37,9 +47,9 @@ var postagger = function(arr){
 		},
         3:
 		{
-          a: 1s
+          a: 1
 		}
-	}
+	});
 }
 
 module.exports = postagger;
